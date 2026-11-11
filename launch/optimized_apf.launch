@@ -1,0 +1,13 @@
+<launch>
+  <!-- 割草机器人 APF 局部避障节点 -->
+  <!-- 必要输入: /attractive_velocity(机体系期望速度，零值停车) /scan /odom -->
+  <!-- 输出: /cmd_vel 及 /optimized_apf/state | replan_request | avoidance_distance -->
+  <!-- 兼容话题 /optimized_apf/deviation 同 avoidance_distance，表示避障行驶里程而非横向偏差 -->
+  <node name="optimized_apf" pkg="optimized_apf" type="optimized_apf_node" output="screen">
+    <rosparam file="$(find optimized_apf)/params/optimized_apf.yaml" command="load"/>
+    <remap from="scan" to="/scan"/>
+    <remap from="odom" to="/odom"/>
+    <remap from="attractive_velocity" to="/attractive_velocity"/>
+    <remap from="cmd_vel" to="/cmd_vel"/>
+  </node>
+</launch>

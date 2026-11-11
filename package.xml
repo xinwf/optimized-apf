@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>optimized_apf</name>
+  <version>0.1.0</version>
+  <description>
+    Optimized artificial potential field local obstacle avoidance for mowing robots.
+    Core ported from artificial_potential_fields0 (APF_unomni), with fixes:
+    yaw P-control, parameterized speed-adaptive gain, emergency-stop hysteresis,
+    output slew-rate smoothing, low-speed and position-progress stall detection,
+    repulsion-aware local-minimum escape, fail-safe input timeouts, avoidance
+    travel-distance reporting and persistent-blockage replan request.
+  </description>
+  <maintainer email="dev@example.com">dev</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>dynamic_reconfigure</depend>
+</package>
